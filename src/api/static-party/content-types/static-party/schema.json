@@ -1,0 +1,27 @@
+{
+  "kind": "collectionType",
+  "collectionName": "static_parties",
+  "info": {
+    "singularName": "static-party",
+    "pluralName": "static-parties",
+    "displayName": "Static Party",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "unique": true
+    },
+    "party": {
+      "type": "component",
+      "repeatable": false,
+      "component": "events.party",
+      "required": true
+    }
+  }
+}

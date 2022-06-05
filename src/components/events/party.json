@@ -1,0 +1,31 @@
+{
+  "collectionName": "components_events_parties",
+  "info": {
+    "displayName": "Party",
+    "icon": "users",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "member1": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::character.character"
+    },
+    "member2": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::character.character"
+    },
+    "member3": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::character.character"
+    },
+    "member4": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::character.character"
+    }
+  }
+}

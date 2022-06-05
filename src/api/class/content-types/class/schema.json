@@ -1,0 +1,37 @@
+{
+  "kind": "collectionType",
+  "collectionName": "classes",
+  "info": {
+    "singularName": "class",
+    "pluralName": "classes",
+    "displayName": "Class",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "regex": "([A-Z])\\w+",
+      "unique": true,
+      "required": true
+    },
+    "role": {
+      "type": "enumeration",
+      "enum": [
+        "dps",
+        "support"
+      ],
+      "default": "dps",
+      "required": true
+    },
+    "characters": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::character.character",
+      "mappedBy": "class"
+    }
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "group_events",
+  "info": {
+    "singularName": "group-event",
+    "pluralName": "group-events",
+    "displayName": "Group Event",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "unique": true,
+      "required": true
+    },
+    "startAt": {
+      "type": "datetime",
+      "required": true
+    },
+    "event_type": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::event-type.event-type",
+      "inversedBy": "group_events"
+    },
+    "parties": {
+      "type": "component",
+      "repeatable": true,
+      "component": "events.party"
+    }
+  }
+}

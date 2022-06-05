@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "event_types",
+  "info": {
+    "singularName": "event-type",
+    "pluralName": "event-types",
+    "displayName": "Event Type",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "regex": "([A-Z])\\w+",
+      "required": true,
+      "unique": true
+    },
+    "estimatedDurationInMinutes": {
+      "type": "integer",
+      "required": true,
+      "default": 60
+    },
+    "ilvlRequired": {
+      "type": "integer",
+      "required": true,
+      "max": 3000,
+      "min": 0
+    },
+    "group_events": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::group-event.group-event",
+      "mappedBy": "event_type"
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "parties": {
+      "type": "integer",
+      "default": 1,
+      "required": true,
+      "min": 1
+    }
+  }
+}
